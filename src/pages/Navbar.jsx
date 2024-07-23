@@ -3,12 +3,9 @@ import Logo from "/assets/images/Logo.svg";
 import { Link } from "react-router-dom";
 import toast from 'react-hot-toast';
 
-const Navbar = (props) => {
-  const isLoggedIn = props.isLoggedIn;
-  const setIsLoggedIn = props.setIsLoggedIn;
-
+const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
   return (
-    <div className="w-11/12 max-w-[1160px] mx-auto flex flex-row justify-between items-center py-4">
+    <div className="container mx-auto flex flex-row justify-between items-center py-4">
       {/* Logo */}
       <div>
         <Link to="/">

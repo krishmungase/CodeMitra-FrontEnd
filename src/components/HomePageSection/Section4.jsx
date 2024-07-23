@@ -4,7 +4,7 @@ import CTAButton from "../core/HomePage/Button"
 
 const Section4 = () => {
   return (
-    <div class="inset-0 -z-10 h-[310px] bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+    <div className="inset-0 -z-10 h-[310px] bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
       <div className="flex items-center flex-col justify-between gap-5 mx-auto">
         <div className="h-[150px]"></div>
         <div className="flex items-center justify-center space-x-12">

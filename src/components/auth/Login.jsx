@@ -1,11 +1,17 @@
 import React from 'react'
+import loginImg from "/assets/images/login.png"
+import Template from './Template'
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   return (
-    <div className='container mx-auto'>
-      <div>
-      </div>
-    </div>
+    <Template
+      title="Welcome Back"
+      description1="Build skills for today, tomorrow, and beyond."
+      description2="Education to future-proof your career."
+      image={loginImg}
+      formType="login"
+      setIsLoggedIn={setIsLoggedIn}
+    />
   )
 }
 
