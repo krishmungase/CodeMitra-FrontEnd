@@ -27,6 +27,15 @@ module.exports = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        richblack: {
+          5: "#F1F2FF",
+          25: "#DBDDEA",
+          100: "#AFB2BF",
+          200: "#999DAA",
+          700: "#2C333F",
+          800: "#161D29",
+          900: "#000814",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

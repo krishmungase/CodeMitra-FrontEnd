@@ -1,8 +1,8 @@
 import React from 'react'
 import GradientText from './GradientText'
-import KnowProgress from "../../../../public/assets/images/Know_ProgressB.png"
-import Compare from "../../../../public/assets/images/compareB.png"
-import Plan from "../../../../public/assets/images/planB.png"
+import KnowProgress from "/assets/images/Know_ProgressB.png"
+import Compare from "/assets/images/compareB.png"
+import Plan from "/assets/images/planB.png"
 import CTAButton from '../../core/HomePage/Button'
 const LearnLangSection = () => {
     return (
