@@ -21,7 +21,7 @@ const Section8 = () => {
               StudyNotion. We provide the tools and skills to teach what you
               love.
             </p>
-            <CTAButton active={true}>
+            <CTAButton active={true} linkto={'/signup'}>
               <div className="flex items-center space-x-2">
                 <p>Start teaching today</p>
                 <ArrowRightOutlined />

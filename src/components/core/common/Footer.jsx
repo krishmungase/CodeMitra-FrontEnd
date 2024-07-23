@@ -3,6 +3,8 @@ import React from 'react';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import { IoLogoTwitter } from "react-icons/io";
+import { Link } from "react-router-dom";
+import CodeMitra from "/assets/images/LogoCodeMitra.png";
 
 const Footer = () => {
     return (
@@ -11,7 +13,12 @@ const Footer = () => {
                 <footer className="bg-[#161D29] text-[#6E727F] py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                            <div className="col-span-2 lg:col-span-1">
+                            <div className="col-span-3 lg:col-span-1">
+                                <div>
+                                    <Link to="/">
+                                        <img src={CodeMitra} alt="Logo" height={32} width={180} loading="lazy" />
+                                    </Link>
+                                </div>
                                 <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
                                 <ul className="space-y-2">
                                     <li><a href="#">About</a></li>
