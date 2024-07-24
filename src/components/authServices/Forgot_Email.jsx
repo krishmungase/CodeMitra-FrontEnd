@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import ForgotPassword from './ForgotPassword';
-import Loading from "../core/common/Loading"
-import { useSelector } from 'react-redux';
 import VerifyEmail from './VerifyEmail';
 
 const Forgot_Email = () => {

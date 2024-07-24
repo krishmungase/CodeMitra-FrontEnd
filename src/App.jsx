@@ -10,6 +10,7 @@ import Contact from './pages/Contact'
 import { useSelector } from 'react-redux'
 import VerifyOTP from "./components/authServices/Verifyotp-email"
 import Forgot_Email from './components/authServices/Forgot_Email'
+import UpdatePassword from './components/authServices/UpdatePassword'
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/auth/verifyemail' element={<VerifyOTP />} />
         <Route path='/auth/forgotpassword' element={<Forgot_Email />} />
+        <Route path='/auth/update-password/:id' element={<UpdatePassword />} />
       </Routes>
     </div>
   )

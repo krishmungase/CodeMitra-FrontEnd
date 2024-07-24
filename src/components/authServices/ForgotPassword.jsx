@@ -25,10 +25,9 @@ const ForgotPassword = ({ email, setEmailSent, setEmail }) => {
   const handleOnsubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // console.log("email : ", email);
+
     try {
       const result = await apiConnector().forgotResetPassword({ method: "POST", bodyData: { email }, url: "/auth/resetpasword-token" })
-      console.log("Result generated when : ", result.data)
       toast.success("Reset Email Send!")
       setEmailSent(true);
     } catch (error) {

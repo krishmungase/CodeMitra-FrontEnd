@@ -21,7 +21,6 @@ const VerifyEmail = ({ email }) => {
     setIsLoading(true);
     try {
       const result = await apiConnector().forgotResetPassword({ method: "POST", bodyData: { email }, url: "/auth/resetpasword-token" })
-      console.log("Result generated when : ", result.data)
       toast.success("Email Resend Successfully!")
     } catch (error) {
       console.log("Error is generating token : ", error)

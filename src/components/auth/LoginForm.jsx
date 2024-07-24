@@ -36,7 +36,6 @@ const LoginForm = () => {
     setIsLoading(true);
     try {
       const response = await apiConnector().loginUser({ method: "POST", bodyData: formData, url: "/auth/login" })
-      // console.log(response.data)
       dispatch(setUser(response.data.user))
       toast.success("Login successful")
       navigate('/dashboard')
@@ -122,7 +121,7 @@ const LoginForm = () => {
             )}
           </span>
 
-          <Link to="/auth/password">
+          <Link to="/auth/forgotpassword">
             <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">
               Forgot Password
             </p>

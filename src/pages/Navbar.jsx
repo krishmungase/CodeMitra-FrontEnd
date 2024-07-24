@@ -6,16 +6,14 @@ import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ProfileDropdown from "../components/Profile/ProfileDropdown";
 import { apiConnector } from "../services/apiconnector";
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Search } from 'lucide-react';
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu"
+import Loading from "@/components/core/common/Loading";
 
 
 const Navbar = () => {
@@ -25,15 +23,19 @@ const Navbar = () => {
   const location = useLocation();
 
   const [subLinks, setSubLinks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchSublinks = async () => {
+    setIsLoading(true)
     try {
       const result = await apiConnector().fetchCategories({ method: "GET", url: "/catogory/getcatagories" })
-      // console.log("Printing Sublinks : ", result);
       setSubLinks(result.data.Catagories);
     } catch (error) {
       toast.error("Catagory Fetching Error")
       console.log("could not fetch catagory list")
+    }
+    finally {
+      setIsLoading(false);
     }
   }
 
@@ -41,7 +43,7 @@ const Navbar = () => {
     fetchSublinks();
   }, [])
 
-  if (!subLinks) return <h1>Loading...</h1>
+  if (isLoading) return <Loading />
 
   console.log(subLinks)
 
@@ -74,7 +76,7 @@ const Navbar = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-56">
                     {subLinks.map((catagory, index) => (
-                      <Link to={`/catalog/${catagory.name.toLowerCase()}`}>
+                      <Link to={`/catalog/${catagory.name.toLowerCase()}`} key={index}>
                         <DropdownMenuItem key={index} className="font-semibold">
                           {catagory.name}
                         </DropdownMenuItem>
@@ -95,6 +97,11 @@ const Navbar = () => {
 
         {/* Button Group  */}
         <div className="flex items-center gap-x-4 text-richblack-100">
+          {
+            user?.token && (
+              <Search />
+            )
+          }
           {
             user && user?.accountType != "instructor" && (
               <Link to="/dashboard/cart" className="relative  bg-richblack-800 px-4 py-2.5 rounded-[10px] border border-richblack-700 hover:bg-richblack-700 transition-colors duration-300">
