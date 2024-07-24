@@ -29,7 +29,7 @@ const Navbar = () => {
   const fetchSublinks = async () => {
     try {
       const result = await apiConnector().fetchCategories({ method: "GET", url: "/catogory/getcatagories" })
-      console.log("Printing Sublinks : ", result);
+      // console.log("Printing Sublinks : ", result);
       setSubLinks(result.data.Catagories);
     } catch (error) {
       toast.error("Catagory Fetching Error")

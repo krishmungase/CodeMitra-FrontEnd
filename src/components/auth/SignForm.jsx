@@ -50,7 +50,7 @@ const SignupForm = () => {
 
     try {
       const response = await apiConnector().sendotp({ method: "POST", bodyData: formData, url: "/auth/sendotp" })
-      console.log(response.data);
+      // console.log(response.data);
       toast.success("otp sent successfully");
       navigate('/auth/verifyemail')
     } catch (error) {

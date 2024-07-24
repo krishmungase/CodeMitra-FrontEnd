@@ -5,12 +5,14 @@ import { useDispatch } from "react-redux";
 import { apiConnector } from "@/services/apiconnector";
 import { setUser } from "../../Store/Slices/authSlice";
 import toast from "react-hot-toast";
+import Loading from "../core/common/Loading"
 
 
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [accountType, setAccountType] = useState("student");
   console.log(accountType);
@@ -31,9 +33,10 @@ const LoginForm = () => {
 
   async function submitHandler(event) {
     event.preventDefault();
+    setIsLoading(true);
     try {
       const response = await apiConnector().loginUser({ method: "POST", bodyData: formData, url: "/auth/login" })
-      console.log(response.data)
+      // console.log(response.data)
       dispatch(setUser(response.data.user))
       toast.success("Login successful")
       navigate('/dashboard')
@@ -41,6 +44,13 @@ const LoginForm = () => {
       toast.error(error.response.data.message)
       console.log("Error", error)
     }
+    finally {
+      setIsLoading(false);
+    }
+  }
+
+  if (isLoading) {
+    return <Loading />
   }
 
   return (

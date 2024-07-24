@@ -8,9 +8,8 @@ import Dashboard from './pages/Dashboard'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import { useSelector } from 'react-redux'
-import ForgotPassword from './components/authServices/ForgotPassword'
 import VerifyOTP from "./components/authServices/Verifyotp-email"
-import VerifyEmail from './components/authServices/VerifyEmail'
+import Forgot_Email from './components/authServices/Forgot_Email'
 
 
 
@@ -31,8 +30,7 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/auth/verifyemail' element={<VerifyOTP />} />
-        <Route path='/auth/password' element={<ForgotPassword />} />
-        <Route path='/auth/password/email' element={<VerifyEmail />} />
+        <Route path='/auth/forgotpassword' element={<Forgot_Email />} />
       </Routes>
     </div>
   )

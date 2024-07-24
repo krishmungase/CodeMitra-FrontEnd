@@ -33,5 +33,12 @@ export const apiConnector = () => {
       params: params ? params : null,
     }),
 
+    forgotResetPassword: async ({ method, url, bodyData, headers, params }) => await axiosInstace({
+      method: method,
+      url: url,
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    })
+
   }
 };
