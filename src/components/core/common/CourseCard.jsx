@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils';
 const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
 
     return (
-        <Card className={cn("py-4 px-6 cursor-pointer", currentCard === cardData.id && "bg-[#F9F9F9] shadow-[5px_5px_0px_0px_rgba(255,255,0,1)] scale-110")} onClick={() => setCurrentCard(cardData.id)}>
+        <Card className={cn("py-4 px-6 cursor-pointer bg-[#161D29]", currentCard === cardData.id && "bg-[#F9F9F9] shadow-[5px_5px_0px_0px_rgba(255,255,0,1)] scale-110")} onClick={() => setCurrentCard(cardData.id)}>
             <CardHeader>
                 <CardTitle className={cn("text-[20px]", currentCard === cardData.id && "text-black")}>{cardData.heading}</CardTitle>
             </CardHeader>

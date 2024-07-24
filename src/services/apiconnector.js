@@ -10,11 +10,28 @@ export const axiosInstace = axios.create({
 });
 
 
-export const apiConnector = ({ method, url, bodyData, headers, params }) => {
-  return axiosInstace({
-    method: method,
-    url: url,
-    data: bodyData ? bodyData : null,
-    params: params ? params : null,
-  });
+export const apiConnector = () => {
+  return {
+    fetchCategories: async ({ method, url, bodyData, headers, params }) => await axiosInstace({
+      method: method,
+      url: url,
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    }),
+
+    loginUser: async ({ method, url, bodyData, headers, params }) => await axiosInstace({
+      method: method,
+      url: url,
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    }),
+
+    sendotp: async ({ method, url, bodyData, headers, params }) => await axiosInstace({
+      method: method,
+      url: url,
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    }),
+
+  }
 };

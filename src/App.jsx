@@ -7,24 +7,30 @@ import Signup from "./components/auth/Signup"
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import { useSelector } from 'react-redux'
+import ForgotPassword from './components/authServices/ForgotPassword'
+import VerifyOTP from "./components/authServices/Verifyotp-email"
 
 
 
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const { user } = useSelector(state => state.auth)
+  console.log(user)
   return (
     <div className='w-screen min-h-screen flex flex-col bg-[#000814]'>
-      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
+        <Route element={<PrivateRoute isLoggedIn={user} />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>
-        <Route path='/login' element={<Login setIsLoggedIn={setIsLoggedIn} />} />
-        <Route path='/signup' element={<Signup setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/auth/verifyemail' element={<VerifyOTP />} />
+        <Route path='/auth/password' element={<ForgotPassword />} />
       </Routes>
     </div>
   )
@@ -32,6 +38,7 @@ const App = () => {
 
 
 const PrivateRoute = ({ isLoggedIn }) => {
+  console.log("p ::", isLoggedIn)
   return (
     !isLoggedIn ? <Navigate to={'/login'} /> : <Outlet />
   )

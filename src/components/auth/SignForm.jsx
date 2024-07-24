@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { apiConnector } from "../../services/apiconnector";
 
-const SignupForm = ({ setIsLoggedIn }) => {
+const SignupForm = () => {
   const [accountType, setAccountType] = useState("student");
 
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
     });
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
     if (formData.createPassword != formData.confirmPassword) {
       toast.error("Passwords do not match");
@@ -46,9 +47,16 @@ const SignupForm = ({ setIsLoggedIn }) => {
       ...formData,
       accountType
     }
-    console.log(finalData);
-    setIsLoggedIn(true);
-    navigate("/dashboard");
+
+    try {
+      const response = await apiConnector().sendotp({ method: "POST", bodyData: formData, url: "/auth/sendotp" })
+      console.log(response.data);
+      toast.success("otp sent successfully");
+      navigate('/auth/verifyemail')
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log("Error creating", error);
+    }
   }
 
   return (

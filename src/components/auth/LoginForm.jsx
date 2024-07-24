@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import { toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { apiConnector } from "@/services/apiconnector";
+import { setUser } from "../../Store/Slices/authSlice";
+import toast from "react-hot-toast";
 
 
-const LoginForm = ({ setIsLoggedIn }) => {
+
+const LoginForm = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [accountType, setAccountType] = useState("student");
   console.log(accountType);
@@ -15,6 +20,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
     password: "",
   });
 
+
+
   function changeHandler(event) {
     setFormData((prev) => ({
       ...prev,
@@ -22,12 +29,18 @@ const LoginForm = ({ setIsLoggedIn }) => {
     }));
   }
 
-  function submitHandler(event) {
+  async function submitHandler(event) {
     event.preventDefault();
-    toast.success("Login Success");
-    console.log(formData)
-    setIsLoggedIn(true);
-    navigate("/dashboard");
+    try {
+      const response = await apiConnector().loginUser({ method: "POST", bodyData: formData, url: "/auth/login" })
+      console.log(response.data)
+      dispatch(setUser(response.data.user))
+      toast.success("Login successful")
+      navigate('/dashboard')
+    } catch (error) {
+      toast.error(error.response.data.message)
+      console.log("Error", error)
+    }
   }
 
   return (
@@ -99,7 +112,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
             )}
           </span>
 
-          <Link to="#">
+          <Link to="/auth/password">
             <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">
               Forgot Password
             </p>
