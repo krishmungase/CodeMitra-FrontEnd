@@ -10,7 +10,6 @@ import {
 import {
   InputOTP,
   InputOTPGroup,
-  InputOTPSeparator,
   InputOTPSlot,
 } from "../../components/ui/input-otp"
 import { MoveLeft, History } from 'lucide-react';
@@ -22,7 +21,7 @@ const VerifyOTP = () => {
 
   return (
     <div className='container mx-auto'>
-      <div className='min-h-screen flex items-center justify-center py-32'>
+      <div className='flex items-center justify-center py-32'>
         <div>
           <Card className="max-w-md px-5">
             <CardHeader>
