@@ -23,7 +23,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route element={<PrivateRoute isLoggedIn={user} />}>
+        <Route element={<PrivateRoute user={user} />}>
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>
         <Route path='/login' element={<Login />} />
@@ -39,10 +39,10 @@ const App = () => {
 }
 
 
-const PrivateRoute = ({ isLoggedIn }) => {
-  console.log("p ::", isLoggedIn)
+const PrivateRoute = ({ user }) => {
+  console.log("p ::", user)
   return (
-    !isLoggedIn ? <Navigate to={'/login'} /> : <Outlet />
+    !user ? <Navigate to={'/login'} /> : <Outlet />
   )
 }
 

@@ -98,7 +98,7 @@ const Navbar = () => {
         {/* Button Group  */}
         <div className="flex items-center gap-x-4 text-richblack-100">
           {
-            user?.token && (
+            user && (
               <Search />
             )
           }
@@ -118,7 +118,7 @@ const Navbar = () => {
           }
 
           {
-            !user?.token && (
+            !user && (
               <Link to="/login">
                 <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">Log in</button>
               </Link>
@@ -126,7 +126,7 @@ const Navbar = () => {
           }
 
           {
-            !user?.token && (
+            !user && (
               <Link to="/signup">
                 <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">Sign up</button>
               </Link>
@@ -134,7 +134,7 @@ const Navbar = () => {
           }
 
           {
-            user?.token && (
+            user && (
               <ProfileDropdown />
             )
           }

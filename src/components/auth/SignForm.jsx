@@ -3,17 +3,23 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { apiConnector } from "../../services/apiconnector";
+import Loading from "../core/common/Loading";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../Store/Slices/authSlice";
 
 const SignupForm = () => {
   const [accountType, setAccountType] = useState("student");
 
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+
 
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    createPassword: "",
+    password: "",
     confirmPassword: "",
   });
 
@@ -25,7 +31,7 @@ const SignupForm = () => {
   }
 
   const [showPassword, setShowPassword] = useState({
-    createPassword: false,
+    password: false,
     confirmPassword: false,
   });
 
@@ -38,7 +44,7 @@ const SignupForm = () => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    if (formData.createPassword != formData.confirmPassword) {
+    if (formData.password != formData.confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
@@ -48,14 +54,24 @@ const SignupForm = () => {
       accountType
     }
 
+    setIsLoading(true);
     try {
-      const response = await apiConnector().sendotp({ method: "POST", bodyData: formData, url: "/auth/sendotp" })
+      const response = await apiConnector().sendotp({ method: "POST", bodyData: finalData, url: "/auth/sendotp" })
+      console.log("Data to store", finalData);
+      dispatch(setUser(finalData));
       toast.success("otp sent successfully");
       navigate('/auth/verifyemail')
     } catch (error) {
       toast.error(error.response.data.message);
       console.log("Error creating", error);
     }
+    finally {
+      setIsLoading(false);
+    }
+  }
+
+  if (isLoading) {
+    return <Loading />
   }
 
   return (
@@ -141,19 +157,19 @@ const SignupForm = () => {
             <input
               className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px]"
               required
-              type={showPassword.createPassword ? "text" : "password"}
-              name="createPassword"
-              id="createPassword"
+              type={showPassword.password ? "text" : "password"}
+              name="password"
+              id="password"
               onChange={changeHandler}
-              value={formData.createPassword}
+              value={formData.password}
               placeholder="Enter Password"
             />
 
             <span
               className="absolute top-[38px] right-3 z-10 cursor-pointer"
-              onClick={() => handleClick("createPassword")}
+              onClick={() => handleClick("password")}
             >
-              {showPassword.createPassword ? (
+              {showPassword.password ? (
                 <AiOutlineEyeInvisible />
               ) : (
                 <AiOutlineEye />
