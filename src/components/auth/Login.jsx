@@ -2,7 +2,7 @@ import React from 'react'
 import loginImg from "/assets/images/login.png"
 import Template from './Template'
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = () => {
   return (
     <Template
       title="Welcome Back"
@@ -10,7 +10,6 @@ const Login = ({ setIsLoggedIn }) => {
       description2="Education to future-proof your career."
       image={loginImg}
       formType="login"
-      setIsLoggedIn={setIsLoggedIn}
     />
   )
 }
