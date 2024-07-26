@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import VerifyOTP from "./components/authServices/Verifyotp-email"
 import Forgot_Email from './components/authServices/Forgot_Email'
 import UpdatePassword from './components/authServices/UpdatePassword'
+import ResetComplete from './components/authServices/ResetComplete'
 
 
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/auth/verifyemail' element={<VerifyOTP />} />
         <Route path='/auth/forgotpassword' element={<Forgot_Email />} />
         <Route path='/auth/update-password/:id' element={<UpdatePassword />} />
+        <Route path='/auth/resetcomplete' element={<ResetComplete />} />
       </Routes>
     </div>
   )

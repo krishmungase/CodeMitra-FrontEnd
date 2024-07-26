@@ -47,7 +47,7 @@ const UpdatePassword = () => {
       const response = await apiConnector().resetnewPassword({ method: 'POST', bodyData: { password: newPassword, confirmPassword: confirmPassword, token }, url: "/auth/resetpassword" })
       console.log("Responsed : ", response);
       toast.success("Password reset successfully!!")
-      navigate('/')
+      navigate('/resetcomplete')
     } catch (error) {
       toast.error(error);
       console.error(error);

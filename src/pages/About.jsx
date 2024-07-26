@@ -1,14 +1,49 @@
-import React from 'react'
+import React from "react";
+import GradientText from "@/components/core/HomePage/GradientText";
+import Images from "../components/Profile/Images";
+import Frame38 from "/assets/images/Frame38.png";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card"
+import { Textarea } from "../components/ui/textarea"
+import Footer from "@/components/core/common/Footer";
+import AbtSection1 from "../components/AboutSection/AbtSection1";
+import AbtSection2 from "@/components/AboutSection/AbtSection2";
+import AbtSection3 from "@/components/AboutSection/AbtSection3";
+import AbtSection4 from "@/components/AboutSection/AbtSection4";
+import AbtSection5 from "@/components/AboutSection/AbtSection5";
+import AbtSection6 from "@/components/AboutSection/AbtSection6";
+import AbtSection7 from "@/components/AboutSection/AbtSection7";
+import AbtSection8 from "@/components/AboutSection/AbtSection8";
+
 
 const About = () => {
   return (
-    <div className='container mx-auto py-16'>
-      <di className="flex items-center justify-center flex-col">
-        <h1 className='text-3xl font-bold'>About Us</h1>
-        <p className='text-md font-thin'>This is the about us page.</p>
-      </di>
-    </div>
-  )
-}
+    <div>
+      <AbtSection1 />
 
-export default About
+      <AbtSection2 />
+
+      <AbtSection3 />
+
+      <AbtSection4 />
+
+      <AbtSection5 />
+
+      <AbtSection6 />
+
+      <AbtSection7 />
+
+      <AbtSection8 />
+
+      <Footer />
+    </div>
+  );
+};
+
+export default About;
