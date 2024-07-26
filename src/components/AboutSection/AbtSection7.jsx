@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "../../components/ui/card"
 import { Textarea } from "../../components/ui/textarea"
+import ContactForm from '../core/common/ContactForm'
 
 const AbtSection7 = () => {
   return (
@@ -19,7 +20,7 @@ const AbtSection7 = () => {
             <CardDescription className="text-[16px]">We’d love to here for you, Please fill out this form.</CardDescription>
           </CardHeader>
           <CardContent>
-            <form className="flex flex-col w-full gap-y-4 mt-6">
+            {/* <form className="flex flex-col w-full gap-y-4 mt-6">
               <div className="flex gap-x-4">
                 <label className="w-full">
                   <p className="text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]">
@@ -75,7 +76,9 @@ const AbtSection7 = () => {
               <button className="bg-yellow-50 text-richblack-900 font-semibold px-[12px] rounded-[8px] py-[8px] mt-6">
                 Send Message
               </button>
-            </form>
+            </form> */}
+
+            <ContactForm />
           </CardContent>
         </Card>
       </div>

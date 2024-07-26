@@ -5,7 +5,7 @@ const AbtSection4 = () => {
     <div className="container mx-auto py-32">
       <div className="flex items-center justify-between flex-col space-y-16 lg:space-y-0 md:flex-row max-w-full">
         <div className="max-w-2xl px-16 space-y-8">
-          <span class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent text-[36px] font-semibold">
+          <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent text-[36px] font-semibold">
             Our Vision
           </span>
           <div className="space-y-5 text-[15px] text-[#838894]">
@@ -21,7 +21,7 @@ const AbtSection4 = () => {
         </div>
         <div>
           <div className="max-w-2xl px-16 space-y-8">
-            <span class="bg-gradient-to-r from-blue-500 via-green-500 to-teal-500 text-transparent bg-clip-text text-[36px] font-semibold">
+            <span className="bg-gradient-to-r from-blue-500 via-green-500 to-teal-500 text-transparent bg-clip-text text-[36px] font-semibold">
               Our Mission
             </span>
             <div className="space-y-5 text-[15px] text-[#838894]">

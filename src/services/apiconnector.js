@@ -52,6 +52,14 @@ export const apiConnector = () => {
       url: url,
       data: bodyData ? bodyData : null,
       params: params ? params : null,
-    })
+    }),
+
+    contactus: async ({ method, url, bodyData, headers, params }) => await axiosInstace({
+      method: method,
+      url: url,
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    }),
+
   }
 };

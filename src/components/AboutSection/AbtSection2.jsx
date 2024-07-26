@@ -11,7 +11,7 @@ const AbtSection2 = () => {
           revolutionizing the way we learn. Our innovative platform{" "}
           <GradientText text={"combines technology"} />, expertise, and
           community to create an{" "}
-          <span class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 bg-clip-text text-transparent">
             unparalleled educational experience
           </span>
           .<span className="text-[#424854]">"</span>

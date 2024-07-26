@@ -1,16 +1,5 @@
 import React from "react";
-import GradientText from "@/components/core/HomePage/GradientText";
-import Images from "../components/Profile/Images";
-import Frame38 from "/assets/images/Frame38.png";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../components/ui/card"
-import { Textarea } from "../components/ui/textarea"
+
 import Footer from "@/components/core/common/Footer";
 import AbtSection1 from "../components/AboutSection/AbtSection1";
 import AbtSection2 from "@/components/AboutSection/AbtSection2";

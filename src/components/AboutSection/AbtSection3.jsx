@@ -6,7 +6,7 @@ const AbtSection3 = () => {
     <div className="container mx-auto py-32">
       <div className="flex items-center md:justify-between justify-center flex-col md:flex-row max-w-full">
         <div className="max-w-2xl px-16 space-y-8">
-          <span class="bg-gradient-to-r from-red-500 via-pink-500 to-violet-500 text-transparent bg-clip-text text-[36px] font-semibold">
+          <span className="bg-gradient-to-r from-red-500 via-pink-500 to-violet-500 text-transparent bg-clip-text text-[36px] font-semibold">
             Our Founding Story
           </span>
           <div className="space-y-5 text-[15px] text-[#838894]">
