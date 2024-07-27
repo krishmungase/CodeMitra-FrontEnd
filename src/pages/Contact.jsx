@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <div>
       <div className="container mx-auto py-20">
-        <div className="max-w-full flex items-center justify-center space-x-10">
+        <div className="max-w-full flex flex-col lg:flex-row space-y-10 items-center lg:space-y-0 justify-center space-x-10">
           <div className='max-w-lg flex-col space-y-5 bg-[#161D29] p-8 rounded-[10px]'>
             <div className='flex items-start justify-center flex-col'>
               <p className='flex items-center justify-center space-x-2'>
