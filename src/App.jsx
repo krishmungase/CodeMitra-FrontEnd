@@ -12,6 +12,7 @@ import VerifyOTP from "./components/authServices/Verifyotp-email"
 import Forgot_Email from './components/authServices/Forgot_Email'
 import UpdatePassword from './components/authServices/UpdatePassword'
 import ResetComplete from './components/authServices/ResetComplete'
+import MyProfile from './components/DashboardComponents/MyProfile'
 
 
 
@@ -25,7 +26,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route element={<PrivateRoute user={user} />}>
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/dashboard' element={<Dashboard />} >
+            <Route path='my-profile' element={<MyProfile />} />
+          </Route>
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />

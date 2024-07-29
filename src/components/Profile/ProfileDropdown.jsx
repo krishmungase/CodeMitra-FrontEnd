@@ -13,6 +13,12 @@ import { Link, useNavigate } from "react-router-dom"
 import { LayoutDashboard, LogOut } from 'lucide-react';
 import { setUser } from '../../Store/Slices/authSlice'
 import toast from 'react-hot-toast'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../components/ui/tooltip"
 
 
 
@@ -31,10 +37,20 @@ const ProfileDropdown = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar>
-          <AvatarImage src={user.image} />
-          <AvatarFallback>{user.firstName[0]}</AvatarFallback>
-        </Avatar>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Avatar>
+                <AvatarImage src={user.image} />
+                <AvatarFallback>{user.firstName[0]}</AvatarFallback>
+              </Avatar>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Profile</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
