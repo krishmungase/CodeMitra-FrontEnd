@@ -38,7 +38,7 @@ const LoginForm = () => {
       const response = await apiConnector().loginUser({ method: "POST", bodyData: formData, url: "/auth/login" })
       dispatch(setUser(response.data.user))
       toast.success("Login successful")
-      navigate('/dashboard')
+      navigate('/dashboard/my-profile')
     } catch (error) {
       toast.error(error.response.data.message)
       console.log("Error", error)

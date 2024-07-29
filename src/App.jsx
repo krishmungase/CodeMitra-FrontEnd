@@ -13,6 +13,11 @@ import Forgot_Email from './components/authServices/Forgot_Email'
 import UpdatePassword from './components/authServices/UpdatePassword'
 import ResetComplete from './components/authServices/ResetComplete'
 import MyProfile from './components/DashboardComponents/MyProfile'
+import PurchaseHistory from './components/DashboardComponents/PurchaseHistory'
+import Wishlist from './components/DashboardComponents/Wishlist'
+import EnrolledCourses from './components/DashboardComponents/EnrolledCourses'
+import Setting from './components/DashboardComponents/Setting'
+import Instructor from './components/DashboardComponents/DashInstructor/Instructor'
 
 
 
@@ -28,6 +33,11 @@ const App = () => {
         <Route element={<PrivateRoute user={user} />}>
           <Route path='/dashboard' element={<Dashboard />} >
             <Route path='my-profile' element={<MyProfile />} />
+            <Route path='enrolled-courses' element={<EnrolledCourses />} />
+            <Route path='wishlist' element={<Wishlist />} />
+            <Route path='purchase-history' element={<PurchaseHistory />} />
+            <Route path='settings' element={<Setting />} />
+            <Route path='instructor' element={<Instructor />} />
           </Route>
         </Route>
         <Route path='/login' element={<Login />} />

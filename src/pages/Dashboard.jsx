@@ -18,7 +18,7 @@ const Dashboard = () => {
     <div className="container mx-auto py-16">
       <div className="flex items-center justify-center space-y-2">
         <Drawer />
-        <div className="px-[240px]">
+        <div>
           <Outlet />
         </div>
       </div>
