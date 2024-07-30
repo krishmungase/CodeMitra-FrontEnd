@@ -3,6 +3,14 @@ import Drawer from "@/components/DashboardComponents/Drawer";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "../components/ui/breadcrumb"
 
 
 const Dashboard = () => {
@@ -16,9 +24,9 @@ const Dashboard = () => {
 
   return (
     <div className="container mx-auto py-16">
-      <div className="flex items-center justify-center space-y-2">
+      <div className="">
         <Drawer />
-        <div>
+        <div className="pl-[240px]">
           <Outlet />
         </div>
       </div>

@@ -6,6 +6,7 @@ import { apiConnector } from "../../services/apiconnector";
 import Loading from "../core/common/Loading";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Store/Slices/authSlice";
+import { setuser } from "../../Store/Slices/profileSlice"
 
 const SignupForm = () => {
   const [accountType, setAccountType] = useState("student");
@@ -58,6 +59,7 @@ const SignupForm = () => {
     try {
       const response = await apiConnector().sendotp({ method: "POST", bodyData: finalData, url: "/auth/sendotp" })
       console.log("Data to store", finalData);
+      dispatch(setuser(finalData));
       dispatch(setUser(finalData));
       toast.success("otp sent successfully");
       navigate('/auth/verifyemail')

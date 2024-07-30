@@ -7,6 +7,7 @@ import * as Icons from "lucide-react";
 import { Settings, LogOut } from "lucide-react"
 import { setUser } from '@/Store/Slices/authSlice';
 import { Link, useLocation } from 'react-router-dom';
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -57,7 +58,7 @@ const Drawer = () => {
               console.log("Location path : ", location.pathname)
               return (
                 <Link key={link.id} to={link.path} className={`flex flex-row items-center justify-center space-x-3 ${location.pathname.includes(link.path) && "text-yellow-400 underline"}`}>
-                  <Icon className={`size-5 text-white ${location.pathname.includes(link.path) && "text-yellow-400"}`} />
+                  <Icon className={`size-5  ${location.pathname.includes(link.path) && "text-yellow-400"}`} />
                   <span className="text-[15px] font-semibold">{link.name}</span>
                 </Link>
               );
@@ -68,14 +69,14 @@ const Drawer = () => {
       </div>
       <div className='border w-[85%] border-b ml-4 my-5'></div>
       <div className="flex space-y-6 items-start px-8 justify-center flex-col">
-        <Link to={'settings'} className={`flex flex-row items-center justify-center space-x-3 `}>
+        <Link to={'settings'} className={`flex flex-row items-center justify-center space-x-3 ${location.pathname.includes("settings") && "text-yellow-400 underline"}`}>
           <Settings className="size-5" />
           <span className="text-[15px] font-semibold">Setting</span>
         </Link>
         <AlertDialog >
           <AlertDialogTrigger asChild>
             <button to={'/'} className="flex flex-row items-center justify-center space-x-3">
-              <LogOut className="size-5" />
+              <LogOut className="size-5 " />
               <span className="text-[15px] font-semibold">Logout</span>
             </button>
           </AlertDialogTrigger>

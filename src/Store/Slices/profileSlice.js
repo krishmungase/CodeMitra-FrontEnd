@@ -9,7 +9,7 @@ const profileSlice = createSlice({
   name: "profile",
   initialState,
   reducers: {
-    serUser: (state, action) => {
+    setuser: (state, action) => {
       state.user = action.payload;
     },
     setLoading: (state, action) => {
@@ -18,5 +18,5 @@ const profileSlice = createSlice({
   },
 });
 
-export const { setToken, setLoading } = profileSlice.actions;
+export const { setuser, setLoading } = profileSlice.actions;
 export default profileSlice.reducer;
