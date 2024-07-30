@@ -88,7 +88,7 @@ const MyProfile = () => {
             </Link>
           </div>
           <div className='flex items-center flex-col justify-center space-y-6 py-2'>
-            <div className='flex items-center justify-between w-[450px]'>
+            <div className='flex items-start justify-between w-[450px]'>
               <div>
                 <p className='text-[#838894] text-sm'>First Name</p>
                 <p>{user.firstName}</p>
@@ -98,14 +98,14 @@ const MyProfile = () => {
                 <p>{user.lastName}</p>
               </div>
             </div>
-            <div className='flex items-center justify-between w-[450px]'>
+            <div className='flex items-start justify-between w-[450px]'>
               <div>
                 <p className='text-[#838894] text-sm'>Email</p>
                 <p>{user.email}</p>
               </div>
               <div>
-                <p className='text-[#838894] text-sm'>contact Number</p>
-                <p>{user.addtionalDetails.about}</p>
+                <p className='text-[#838894] text-sm'>Contact NO.</p>
+                <p className=''>{user.addtionalDetails.contactNumber}</p>
               </div>
             </div>
           </div>
