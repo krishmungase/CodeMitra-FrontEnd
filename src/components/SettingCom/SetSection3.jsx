@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";w
+import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 
 const SetSection3 = () => {
+  
   const [showPassword, setShowPassword] = useState({
     password: false,
     confirmPassword: false,
@@ -13,6 +14,8 @@ const SetSection3 = () => {
       [buttonName]: !showPassword[buttonName],
     });
   };
+
+
   return (
     <div className='max-w-[69rem] container mx-auto py-8'>
       <div className='flex items-start px-16 py-8 justify-between flex-col bg-[#161D29] rounded-[10px] min-h-36'>
