@@ -41,8 +41,8 @@ const ProfileDropdown = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Avatar>
-                <AvatarImage src={user.image} />
-                <AvatarFallback>{user.firstName[0]}</AvatarFallback>
+                <AvatarImage src={user?.image} />
+                <AvatarFallback>{user?.firstName[0]}</AvatarFallback>
               </Avatar>
             </TooltipTrigger>
             <TooltipContent>

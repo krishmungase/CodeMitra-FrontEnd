@@ -11,6 +11,7 @@ import { SlashIcon } from "@radix-ui/react-icons"
 import SetSection1 from '../SettingCom/SetSection1';
 import SetSection2 from '../SettingCom/SetSection2';
 import SetSection3 from '../SettingCom/SetSection3';
+import SetSection4 from '../SettingCom/SetSection4';
 
 
 const Setting = () => {
@@ -44,6 +45,8 @@ const Setting = () => {
       <SetSection2 />
 
       <SetSection3 />
+
+      <SetSection4 />
 
     </div>
   )

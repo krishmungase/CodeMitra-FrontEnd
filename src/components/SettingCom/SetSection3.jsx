@@ -68,64 +68,66 @@ const SetSection3 = () => {
           <p className='text-lg font-bold'>Change Password</p>
         </div>
         <div className='flex items-center w-full flex-col justify-center space-y-6 py-2'>
-          <form onSubmit={submitHandler} className='w-full flex items-center justify-between space-x-4'>
-            <div className='flex-1'>
-              <label className="w-full relative">
-                <p className="text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]">
-                  Old Password<sup className="text-pink-200">*</sup>
-                </p>
-                <input
-                  className="bg-[#2C333F] rounded-[4px] w-full px-[12px] py-[8px]"
-                  required
-                  type={showPassword.password ? "text" : "password"}
-                  name="oldPassword"
-                  id="oldPassword"
-                  onChange={changeHandler}
-                  value={formData.oldPassword}
-                  placeholder="Enter current Password"
-                  disabled={isLoading}
-                />
-                <span
-                  className="absolute top-[38px] right-3 z-10 cursor-pointer"
-                  onClick={() => handleClick("password")}
-                >
-                  {showPassword.password ? (
-                    <AiOutlineEyeInvisible />
-                  ) : (
-                    <AiOutlineEye />
-                  )}
-                </span>
-              </label>
+          <form onSubmit={submitHandler} className='w-full flex flex-col items-center space-x-4'>
+            <div className='flex items-center space-x-8 w-full'>
+              <div className='flex-1'>
+                <label className="w-full relative">
+                  <p className="text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]">
+                    Old Password<sup className="text-pink-200">*</sup>
+                  </p>
+                  <input
+                    className="bg-[#2C333F] rounded-[4px] w-full px-[12px] py-[8px]"
+                    required
+                    type={showPassword.password ? "text" : "password"}
+                    name="oldPassword"
+                    id="oldPassword"
+                    onChange={changeHandler}
+                    value={formData.oldPassword}
+                    placeholder="Enter current Password"
+                    disabled={isLoading}
+                  />
+                  <span
+                    className="absolute top-[38px] right-3 z-10 cursor-pointer"
+                    onClick={() => handleClick("password")}
+                  >
+                    {showPassword.password ? (
+                      <AiOutlineEyeInvisible />
+                    ) : (
+                      <AiOutlineEye />
+                    )}
+                  </span>
+                </label>
+              </div>
+              <div className='flex-1'>
+                <label className="w-full relative">
+                  <p className="text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]">
+                    New Password<sup className="text-pink-200">*</sup>
+                  </p>
+                  <input
+                    className="bg-[#2C333F] rounded-[4px] w-full px-[12px] py-[8px]"
+                    required
+                    type={showPassword.confirmPassword ? "text" : "password"}
+                    name="newPassword"
+                    id="newPassword"
+                    onChange={changeHandler}
+                    value={formData.newPassword}
+                    placeholder="Enter New Password"
+                    disabled={isLoading}
+                  />
+                  <span
+                    className="absolute top-[38px] right-1.5 z-10 cursor-pointer"
+                    onClick={() => handleClick("confirmPassword")}
+                  >
+                    {showPassword.confirmPassword ? (
+                      <AiOutlineEyeInvisible />
+                    ) : (
+                      <AiOutlineEye />
+                    )}
+                  </span>
+                </label>
+              </div>
             </div>
-            <div className='flex-1'>
-              <label className="w-full relative">
-                <p className="text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]">
-                  New Password<sup className="text-pink-200">*</sup>
-                </p>
-                <input
-                  className="bg-[#2C333F] rounded-[4px] w-full px-[12px] py-[8px]"
-                  required
-                  type={showPassword.confirmPassword ? "text" : "password"}
-                  name="newPassword"
-                  id="newPassword"
-                  onChange={changeHandler}
-                  value={formData.newPassword}
-                  placeholder="Enter New Password"
-                  disabled={isLoading}
-                />
-                <span
-                  className="absolute top-[38px] right-1.5 z-10 cursor-pointer"
-                  onClick={() => handleClick("confirmPassword")}
-                >
-                  {showPassword.confirmPassword ? (
-                    <AiOutlineEyeInvisible />
-                  ) : (
-                    <AiOutlineEye />
-                  )}
-                </span>
-              </label>
-            </div>
-            <div className='flex items-center justify-end px-8 space-x-4 py-4'>
+            <div className='flex items-end justify-end px-8 space-x-4 pt-8 w-full'>
               <button
                 className='flex items-center justify-center text-white hover:bg-[#2C333F] bg-gray-700 px-5 rounded-[8px] py-[9px] space-x-2'
                 type="button"
@@ -139,7 +141,6 @@ const SetSection3 = () => {
                 disabled={isLoading}
               >
                 <span className='text-md font-semibold'>{isLoading ? 'Saving...' : 'Save'}</span>
-                {/* <span className='text-md font-semibold'>Save</span> */}
               </button>
             </div>
           </form>

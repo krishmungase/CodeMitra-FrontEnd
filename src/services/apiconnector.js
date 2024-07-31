@@ -68,5 +68,25 @@ export const apiConnector = () => {
       params: params ? params : null,
     }),
 
+    deleteAccount: async ({ method, url, bodyData, headers, params }) => await axiosInstace({
+      method: method,
+      url: url,
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    }),
+
+    enrolledCourse: async ({ token, method, url, bodyData, params }) => await axios({
+
+      method: method,
+      url: url,
+      baseURL: BASE_URL,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    }),
   }
 };
