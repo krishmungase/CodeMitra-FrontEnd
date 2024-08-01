@@ -88,5 +88,19 @@ export const apiConnector = () => {
       data: bodyData ? bodyData : null,
       params: params ? params : null,
     }),
+
+    setProfileData: async ({ token, method, url, bodyData, params }) => await axios({
+
+      method: method,
+      url: url,
+      baseURL: BASE_URL,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      data: bodyData ? bodyData : null,
+      params: params ? params : null,
+    }),
   }
 };
